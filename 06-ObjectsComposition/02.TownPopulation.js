@@ -13,6 +13,11 @@ function pop(townsAssStrings) {
         }else{
             result[name] = population;
         }
+
+        // if (name in result){
+        //     result[name] = 0 ;
+        // }
+        // result[name] += Number(population);
     }
     for (const resultKey in result) {
         console.log(`${resultKey} : ${result[resultKey]}`)
