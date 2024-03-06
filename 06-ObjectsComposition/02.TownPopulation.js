@@ -6,6 +6,8 @@ function pop(townsAssStrings) {
         const name =  tokens[0];
         const population =  Number(tokens[1]);
 
+       //const [name, population] = input.split(' <-> '); Кратък начин за пресвояването на променливите но ако го правим така трябва да се парсе нъмбара когато го записваме.
+
         if (name in result){
             result[name] +=population;
         }else{
