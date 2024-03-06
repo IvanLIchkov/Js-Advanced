@@ -17,6 +17,10 @@ function pop(townsAssStrings) {
     for (const resultKey in result) {
         console.log(`${resultKey} : ${result[resultKey]}`)
     }
+
+    // for (let[name, population] of Object.entries(result)) {
+    //     console.log(`${name} : ${result[population]}`)
+     // Така направо деструкторираме масива от обекти и буравим директно с данните!
 }
 
 
