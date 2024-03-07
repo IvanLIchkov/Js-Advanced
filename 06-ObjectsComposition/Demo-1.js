@@ -1,16 +1,22 @@
+function bye() {
+    console.log('Bye!')
+}
+
 const phonebook = {
     'John': '+1-555-John',
     'Meri': '+1-555-Meri',
     'Bob': '+1-555-Bob',
     sayHi: function (){
         console.log('Hello!')
-    }
+    },
+    sayBye: bye
 };
 
 for (const key in phonebook) {
     console.log(key, phonebook[key]);
 };
 phonebook.sayHi();
+phonebook.sayBye();
 
 const entries = Object.entries(phonebook);
 console.log(entries);
