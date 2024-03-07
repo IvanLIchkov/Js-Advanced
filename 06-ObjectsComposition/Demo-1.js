@@ -14,7 +14,7 @@ const phonebook = {
 
 for (const key in phonebook) {
     console.log(key, phonebook[key]);
-};
+}
 phonebook.sayHi();
 phonebook.sayBye();
 
