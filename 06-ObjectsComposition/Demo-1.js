@@ -6,7 +6,7 @@ const phonebook = {
     'John': '+1-555-John',
     'Meri': '+1-555-Meri',
     'Bob': '+1-555-Bob',
-    sayHi: function (){
+    sayHi(){
         console.log('Hello!')
     },
     sayBye: bye
@@ -29,3 +29,11 @@ console.log(entries);
 
 const sorted = Object.fromEntries(entries);// Така отново връщаме в обекти
 console.log(sorted);
+
+const person = {
+    name: 'John',
+    age: 31,
+    sayHi: phonebook.sayHi
+}
+
+person.sayHi();
