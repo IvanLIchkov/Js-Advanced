@@ -1,9 +1,9 @@
 function sum(arr){
     let sum = 0;
-    for(num of arr){
+    for(let num of arr){
         sum+= Number(num);
-        return sum;
     }
-
-    module.exports = {sum};
+    return sum;
 }
+module.exports = {sum};
+sum([1,2])
