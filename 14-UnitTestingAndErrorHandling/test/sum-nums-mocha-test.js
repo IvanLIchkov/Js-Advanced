@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let sum = require('../sum-nums').sum;
+let sum = require('../04.SumOfNumbers').sum;
 
 describe("sum(arr) - sum array of numbers", function (){
     it("Should return 3 for [1,2]", function (){
