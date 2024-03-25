@@ -1,4 +1,3 @@
-const {expect} = require("chai");
 
 function isSymmetric(arr) {
     if (!Array.isArray(arr)){
