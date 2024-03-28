@@ -5,14 +5,14 @@ function generateContacts() {
         lastName;
         phoneNumber;
         email;
-        _online;
+        online;
 
         constructor(firstName, lastName, phoneNumber, email) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.phoneNumber = phoneNumber;
             this.email = email;
-            this._online = false;
+            this.online = false;
         }
         render(divId){
             const mainDiv = document.getElementById(divId);
@@ -33,14 +33,14 @@ function generateContacts() {
             divInfo.style.display = 'none';
             mainDiv.appendChild(article);
         }
-        set online(value){
-            this._online = value;
+        set makeOnline(value){
+            this.online = value;
             if (value === true){
                 this.changeStatus();
             }
         }
-        get online(){
-            return this._online;
+        get makeOnline(){
+            return this.online;
         }
         changeStatus(){
             const titleDiv = document.querySelector(`.title[data-firstname="${this.firstName}"][data-lastname="${this.lastName}"]`);
@@ -60,7 +60,7 @@ function generateContacts() {
     ];
     contacts.forEach(c => c.render('main'));
     // After 1 second, change the online status to true
-    setTimeout(() => contacts[1].online = true, 2000);
+    setTimeout(() => contacts[1].makeOnline = true, 2000);
     function moreInfo(event) {
         const infoDiv = event.target.parentNode.parentNode.lastChild;
         if (infoDiv.style.display === 'none'){
