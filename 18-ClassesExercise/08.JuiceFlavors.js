@@ -1,20 +1,25 @@
 function controller(data) {
     const juices = {};
+    const output = new Map();
     for (let datum of data) {
         const [name, quantity] = datum.split(' => ')
         if(!juices.hasOwnProperty(name)){
             juices[name] = 0;
         }
-        if (juices[name] +  quantity / 1000 >= 1){
-            juices[name] += ((juices[name] + Number(quantity))/1000);
+        juices[name] +=  Number(quantity);
+        if (juices[name]  >= 1000){
+            if (!output.has(name)){
+                output.set(name, Math.floor(juices[name] /1000));
+            }else {
+                output.set(name, Math.floor((juices[name] /1000)));
+            }
+        }else{
+            juices[name] = Number(quantity);
         }
     }
-    console.log(juices)
-    // Object.keys(juices).forEach(j =>{
-    //     if(juices[j] / 1000 >=1){
-    //         console.log(`${j} => ${(juices[j] / 1000).toFixed(0)}`)
-    //     }
-    // })
+    output.forEach((value, key) => {
+        console.log(`${key} => ${value}`)
+    })
 }
 controller(['Orange => 2000',
     'Peach => 1432',
